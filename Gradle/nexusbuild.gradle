@@ -7,11 +7,9 @@ repositories {
     maven { url defaultRepository }
 }
 
-task assembleArtifact(type: Zip, group: 'DB') {
-    archiveName 'db.zip'
-    destinationDir file("$buildDir/libs/")
-    from "src/main/sql"
-    description "Assemble archive $archiveName into ${relativePath(destinationDir)}"
+task assembleArtifact(type: Zip) {
+    from "src/main/policies"
+    //description "Assemble archive $archiveName into ${relativePath(destinationDir)}"
 }
 
 publishing {
